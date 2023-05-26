@@ -293,7 +293,7 @@ private fun AppDrawerFooter(modifier: Modifier = Modifier) {
         .padding(start = 16.dp)
         .constrainAs(settingsText) {
           start.linkTo(settingsImage.end)
-          centerVerticallyTo(settingsImage)
+          centerVerticallyTo (settingsImage)
         }
     )
     Icon(

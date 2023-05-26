@@ -37,7 +37,7 @@ class ChatActivity : AppCompatActivity() {
 
         binding.composeButton.setContent {
             MaterialTheme {
-                ComposableButton {
+                ComposeButton {
                     showToast()
                 }
             }
@@ -50,16 +50,17 @@ class ChatActivity : AppCompatActivity() {
 }
 
 @Composable
-private fun ComposableButton(onButtonClick: () -> Unit){
+private fun ComposeButton(onButtonClick: () -> Unit) {
     val buttonColors = buttonColors(
         backgroundColor = Color(0xFF006837),
         contentColor = Color.White
     )
-
     Button(
         onClick = onButtonClick, elevation = null,
         shape = RoundedCornerShape(corner = CornerSize(24.dp)),
-        contentPadding = PaddingValues(start = 32.dp, end = 32.dp),
+        contentPadding = PaddingValues(
+            start = 32.dp, end = 32.dp
+        ),
         colors = buttonColors,
         modifier = Modifier.height(48.dp)
     ) {
@@ -71,9 +72,8 @@ private fun ComposableButton(onButtonClick: () -> Unit){
     }
 }
 
-@Preview
+@Preview(showBackground = true)
 @Composable
 private fun ComposeButtonPreview(){
-    ComposableButton {
-    }
+    ComposeButton { }
 }
